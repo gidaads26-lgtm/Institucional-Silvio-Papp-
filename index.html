@@ -682,7 +682,17 @@ h2 + .lead,h1 + .lead{margin-top:24px}
 .bt > .bt-b{transform:translateY(110%);opacity:0;filter:blur(2px)}
 .btn.liq-in .bt-a{transform:translateY(-110%);opacity:0;filter:blur(2px)}
 .btn.liq-in .bt-b{transform:none;opacity:1;filter:none}
-@media (prefers-reduced-motion:reduce){.btn.liq-in:before{animation:none;transform:translateY(-73%)}.btn.liq-out:before{animation:none}.bt > span{transition:none}}
+/* Com "reduzir animações" ligado, o efeito do botão continua: ele só acontece quando a pessoa passa o mouse ou toca */
+@media (prefers-reduced-motion:reduce){
+  .btn.btn.liq-in:before{animation:liqIn 760ms cubic-bezier(.45,.05,.2,1) forwards!important}
+  .btn.btn.liq-out:before{animation:liqOut 620ms cubic-bezier(.5,0,.3,1) forwards!important}
+  .bt > span{transition:transform 520ms cubic-bezier(.22,1,.36,1),opacity 420ms ease,filter 420ms ease!important}
+  .btn.btn.cta,.btn.btn.ghost{transition:transform 220ms ease,box-shadow 220ms ease,color 260ms ease!important}
+  .btn.btn.cta.liq-in,.btn.btn.ghost.liq-in{transition-delay:0ms,0ms,180ms!important}
+  .btn.btn.cta.liq-out,.btn.btn.ghost.liq-out{transition-delay:0ms,0ms,230ms!important}
+  .btn.btn.cta svg{transition:background-color 320ms ease,color 320ms ease,transform 420ms ease!important}
+  .btn.btn.cta.liq-out svg{transition-delay:230ms,230ms,0ms!important}
+}
 
 /* ============ WhatsApp flutuante: só o ícone, pulsando ============ */
 .floating.wa-float{display:grid;place-items:center;width:62px;height:62px;border-radius:50%;background:#25D366;right:20px;bottom:20px;box-shadow:0 10px 26px rgba(18,140,74,.38),0 2px 6px rgba(0,0,0,.18);animation:waBeat 2.4s cubic-bezier(.22,1,.36,1) 1s infinite}
@@ -696,7 +706,13 @@ h2 + .lead,h1 + .lead{margin-top:24px}
 @keyframes waBeat{0%,100%{transform:scale(1)}12%{transform:scale(1.1)}24%{transform:scale(.97)}36%{transform:scale(1.04)}48%{transform:scale(1)}}
 @keyframes waRing{0%{transform:scale(1);opacity:.85}100%{transform:scale(1.75);opacity:0}}
 @media (max-width:640px){.floating.wa-float{width:58px;height:58px;right:16px;bottom:16px}}
-@media (prefers-reduced-motion:reduce){.floating.wa-float,.wa-float:before,.wa-float:after{animation:none}}
+/* Com "reduzir animações": pulso de brilho, sem o botão crescer */
+@keyframes waGlow{0%{box-shadow:0 10px 26px rgba(18,140,74,.38),0 0 0 0 rgba(37,211,102,.65)}70%,100%{box-shadow:0 10px 26px rgba(18,140,74,.38),0 0 0 18px rgba(37,211,102,0)}}
+@media (prefers-reduced-motion:reduce){
+  .floating.wa-float{animation:waGlow 2s ease-out 0s infinite!important}
+  .wa-float:before,.wa-float:after{display:none}
+  .floating.wa-float.hide{animation:none!important}
+}
 .footer-links a{display:inline-flex;align-items:center;min-height:44px}
 @media (max-width:640px){
   .hero{padding-bottom:64px}

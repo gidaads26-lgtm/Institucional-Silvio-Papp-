@@ -7,7 +7,7 @@ Site de uma página, feito a partir do modelo do site HipnoQuantec (mesmo CSS e 
 - `index.html`: o site inteiro (textos, estilos e scripts).
 - `img/`: fotos (`silvio-papp-retrato.jpg` no topo, `silvio-papp-perfil.jpg` em "Quem sou eu", `consultorio-uru.jpg` no local de atendimento).
 - `video/`: vídeos de depoimento.
-- `og-silviopapp.jpg`: imagem que aparece quando o link é compartilhado no WhatsApp e nas redes (1200×630).
+- `og-silviopapp-v2.jpg`: imagem que aparece quando o link é compartilhado no WhatsApp e nas redes (1200×630).
 - `robots.txt` e `sitemap.xml`: ajudam o Google a encontrar o site.
 
 ## Antes de publicar: o que falta preencher
@@ -45,5 +45,5 @@ Para um vídeo do YouTube, troque `data-src` por `data-id="CODIGO_DO_VIDEO"`: o 
 
 1. Crie um repositório no GitHub com estes arquivos na raiz.
 2. Na Vercel, "Add New Project", escolha o repositório e publique (sem configuração de build).
-3. O domínio provisório usado nas metatags é `https://silviopapp.vercel.app`. Se o endereço final for outro, troque em `index.html` (metatags, `canonical` e JSON-LD), `robots.txt` e `sitemap.xml`.
+3. O domínio provisório usado nas metatags é `https://institucionalsilviopapphipnologo.vercel.app`. Se o endereço final for outro, troque em `index.html` (metatags, `canonical` e JSON-LD), `robots.txt` e `sitemap.xml`.
 4. Teste a prévia em https://developers.facebook.com/tools/debug/ (botão "Extrair novamente") e envie o link no WhatsApp com `?v=1` no fim para escapar do cache.

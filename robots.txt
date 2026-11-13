@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://silviopapp.vercel.app/sitemap.xml
+Sitemap: https://institucionalsilviopapphipnologo.vercel.app/sitemap.xml

@@ -717,6 +717,17 @@ h2 + .lead,h1 + .lead{margin-top:24px}
 a,button,summary,label,[role="button"]{-webkit-tap-highlight-color:transparent}
 .btn,.menu-toggle,.wa-float,.vcard,.foot-social a,.place-map,.navlinks a,.footer-links a,.faq summary,.foot-privacy,.brand,.foot-cta{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .menu-toggle:focus:not(:focus-visible),.btn:focus:not(:focus-visible),.faq summary:focus:not(:focus-visible){outline:none}
+/* local de atendimento sem foto: duas metades iguais */
+.place-card.no-photo{grid-template-columns:1fr 1fr;max-width:880px;margin-left:auto;margin-right:auto}
+.place-card.no-photo .place-info{padding:clamp(32px,4vw,52px) clamp(24px,3vw,40px)}
+.place-card.no-photo .place-info + .place-info{border-left:1px solid var(--line)}
+.place-card.no-photo .place-addr{flex:1;margin-bottom:22px}
+.place-card.no-photo .place-addr:before{display:none}
+.place-ic{display:grid;place-items:center;width:52px;height:52px;margin-bottom:16px;border-radius:50%;background:var(--sage-soft);color:var(--green);transition:transform 220ms var(--ease)}
+.place-ic svg{width:24px;height:24px}
+.place-card.no-photo .place-info h3{margin-bottom:10px}
+@media (hover:hover){.place-card.no-photo .place-info:hover .place-ic{transform:translateY(-3px)}}
+@media (max-width:640px){.place-card.no-photo{grid-template-columns:1fr}.place-card.no-photo .place-info + .place-info{border-left:0;border-top:1px solid var(--line)}}
 .footer-links a{display:inline-flex;align-items:center;min-height:44px}
 @media (max-width:640px){
   .hero{padding-bottom:64px}
@@ -877,12 +888,18 @@ a,button,summary,label,[role="button"]{-webkit-tap-highlight-color:transparent}
     <span class="label">Local de atendimento</span>
     <h2>Consultório em Uru (SP).</h2>
     <p class="lead">Uma sala reservada para o seu atendimento.</p>
-    <div class="place-card">
-      <img class="place-photo" src="img/consultorio-uru.jpg" alt="Sala de atendimento do Silvio Papp em Uru (SP), com maca, poltrona com almofadas e janela" width="1200" height="750" loading="lazy">
+    <div class="place-card no-photo">
       <div class="place-info">
-        <h3>Presencial e online</h3>
+        <span class="place-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+        <h3>Presencial</h3>
         <p class="place-addr">Avenida Altino Negrisoli, 309<br>Uru – SP, 16650-007</p>
         <a class="place-map" href="https://www.google.com/maps/search/?api=1&amp;query=Avenida%20Altino%20Negrisoli%2C%20309%2C%20Uru%20-%20SP%2C%2016650-007" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+      <div class="place-info">
+        <span class="place-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="12" rx="2.2"/><path d="M8.5 20h7M12 16.5V20"/></svg></span>
+        <h3>Online</h3>
+        <p class="place-addr">Consultas por videochamada,<br>de onde você estiver.</p>
+        <a class="place-map" href="https://wa.me/5514996022713?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Silvio%20Papp%20e%20gostaria%20de%20agendar%20uma%20consulta%20de%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" data-wa data-wa-msg="Olá! Vim pelo site do Silvio Papp e gostaria de agendar uma consulta online.">Agendar online</a>
       </div>
     </div>
     <div class="video-foot">

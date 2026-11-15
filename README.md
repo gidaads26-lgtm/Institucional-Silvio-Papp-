@@ -5,7 +5,7 @@ Site de uma página, feito a partir do modelo do site HipnoQuantec (mesmo CSS e 
 ## Arquivos
 
 - `index.html`: o site inteiro (textos, estilos e scripts).
-- `img/`: fotos (`silvio-papp-retrato.jpg` no topo, `silvio-papp-perfil.jpg` em "Quem sou eu", `consultorio-uru.jpg` no local de atendimento).
+- `img/`: fotos (`silvio-papp-retrato.jpg` no topo, `silvio-papp-perfil.jpg` em "Quem sou eu").
 - `video/`: vídeos de depoimento.
 - `og-silviopapp-v2.jpg`: imagem que aparece quando o link é compartilhado no WhatsApp e nas redes (1200×630).
 - `robots.txt` e `sitemap.xml`: ajudam o Google a encontrar o site.
